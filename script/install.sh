@@ -252,10 +252,11 @@ parse_args() {
                 ;;
 
             -p | --path)
-                if [ -z "${2:-}" ]; then
+                shift
+                if [ -z "${1:-}" ]; then
                     fatal '-p|--path must be followed by a path.';
                 fi
-                path="$2"
+                path="$1"
                 ;;
 
             -v | --verbose)
